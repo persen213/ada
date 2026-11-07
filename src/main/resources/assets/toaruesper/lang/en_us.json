@@ -1,0 +1,6 @@
+{
+  "item.toaruesper.senior_factor": "Senior Factor",
+  "toaruesper.ability.senior": "Senior",
+  "toaruesper.skill.black_hole": "Black Hole",
+  "toaruesper.skill.black_hole.desc": "Opens a black hole where you look. Its pull grows for a couple of seconds, dragging creatures, loose items and enemy projectiles toward the centre. Things close to the centre are hurt, harder the longer it lives. Just before the end it contracts, then collapses in a shockwave that throws survivors and items outward. Walls protect, and it does not destroy blocks. Press the key again to collapse it early."
+}

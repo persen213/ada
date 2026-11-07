@@ -1,13 +1,13 @@
-// Black Hole Add-on for Re:AcademyCraft 1.5.0
-// Minecraft 1.20.1 / Forge 47.4.10 / Java 17
+// Toaru Esper Add-on for Re:AcademyCraft 1.5.0 (Minecraft 1.20.1, Forge 47.4.10).
+// Built the same way as the official Re:AcademyCraft example add-on.
 plugins {
     id 'java'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
 
-group = 'io.blackhole.addon'
-version = '1.0.0'
-base { archivesName = 'blackhole-addon-forge-1.20.1' }
+group = 'io.toaruesper.addon'
+version = '0.2.0'
+base { archivesName = 'toaru-esper-addon-forge-1.20.1' }
 
 java { toolchain.languageVersion = JavaLanguageVersion.of(17) }
 
@@ -22,22 +22,25 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            mods { blackhole { source sourceSets.main } }
+            mods { toaruesper { source sourceSets.main } }
         }
         server {
             workingDirectory project.file('run')
             args '--nogui'
-            mods { blackhole { source sourceSets.main } }
+            mods { toaruesper { source sourceSets.main } }
         }
     }
 }
 
 repositories {
+    // The Re:AcademyCraft public API jar (compile-time only). It sits in the libs folder of this project.
     flatDir { dirs 'libs' }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.4.10'
+    // API only: the add-on is compiled against the public API and needs the real Re:AcademyCraft mod at run time.
+    // The API classes are NOT packed into our jar.
     implementation fg.deobf('blank:re-academycraft-forge-1.20.1:1.5.0:api')
 }
 
@@ -49,7 +52,7 @@ tasks.named('processResources', ProcessResources) {
 
 tasks.named('jar', Jar) {
     manifest {
-        attributes 'Implementation-Title': 'Black Hole Add-on',
+        attributes 'Implementation-Title': 'Toaru Esper Add-on',
                    'Implementation-Version': project.version
     }
     finalizedBy 'reobfJar'

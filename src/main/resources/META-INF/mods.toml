@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[47,48)"
+license="See README.md (this add-on uses the GPLv3 Re:AcademyCraft public API; the owner must confirm the license before sharing it)"
+
+[[mods]]
+modId="toaruesper"
+version="${version}"
+displayName="Toaru Esper Add-on"
+description='''
+Extra espers for Re:AcademyCraft. Adds the Senior category with the Black Hole ability.
+Requires Re:AcademyCraft 1.5.0 on the server and on every client.
+'''
+
+[[dependencies.toaruesper]]
+modId="academy"
+mandatory=true
+versionRange="[1.5.0,1.6)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.toaruesper]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.10,48)"
+ordering="NONE"
+side="BOTH"
